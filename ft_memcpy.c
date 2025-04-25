@@ -11,7 +11,7 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
+/*
 #include <stdio.h>
  int	main(void)
  {
@@ -21,5 +21,5 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 	printf("%s\n", dst);
 	ft_memcpy(dst, src, sizeof(src));
 	printf("%s\n", dst);
-
  }
+*/
