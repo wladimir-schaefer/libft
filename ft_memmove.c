@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/06 12:29:28 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/07 15:33:38 by wschafer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	const unsigned char *s;
-	unsigned char *d;
+	const unsigned char	*s;
+	unsigned char		*d;
 
 	s = (const unsigned char *)src;
 	d = (unsigned char *)dest;
-	if ( dest == src || !src || !dest)
+	if (dest == src || !src || !dest)
 		return (dest);
 	if (d < s)
 	{

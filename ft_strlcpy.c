@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/06 12:30:35 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/07 15:28:29 by wschafer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
 	size_t	src_len;
 	size_t	i;
@@ -18,7 +30,6 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dsize)
 		}
 		dst[i] = '\0';
 	}
-
 	return (src_len);
 }
 /*

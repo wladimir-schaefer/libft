@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/06 12:30:07 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/07 15:29:30 by wschafer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while(*s)
+	while (*s)
 	{
-		if(*s == (char)c)
-			return((char *)s);
+		if (*s == (char)c)
+			return ((char *)s);
 		s++;
 	}
-	if((char)c == '\0')
-		return((char *)s);
-	return(NULL);
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
 /*
 #include <stdio.h>
