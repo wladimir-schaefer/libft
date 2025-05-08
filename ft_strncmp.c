@@ -14,17 +14,18 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	c1;
+	unsigned char	c2;
 
-	if (n == 0)
-		return (0);
 	i = 0;
-	while (i < n - 1 && s1[i] != '\0' && s2[i] != '\0')
+	while (i < n)
 	{
-		if (s1[i] != s2[i])
-			return ((int)(s1[i] - s2[i]));
-		else
-			i++;
+		c1 = (unsigned char)s1[i];
+		c2 = (unsigned char)s2[i];
+		if (c1 == '\0' || c2 == '\0' || c1 != c2)
+			return (c1 - c2);
+		i++;
 	}
 	return (0);
 }
@@ -33,8 +34,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int	main(void)
 {
-	const char *str1 = "aba";
-	const char *str2 = "abc";
+	const char *str1 = "abc";
+	const char *str2 = "111111";
 	printf("%d\n", ft_strncmp(str1, str2, 3));
 }
 */
