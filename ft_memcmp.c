@@ -1,49 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 16:51:20 by wschafer          #+#    #+#             */
-/*   Updated: 2025/05/08 16:51:33 by wschafer         ###   ########.fr       */
+/*   Created: 2025/05/12 12:07:38 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/12 12:21:16 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char	*p;
+	const unsigned char	*mem1;
+	const unsigned char	*mem2;
+	size_t				i;
 
-	p = s;
-	while (n--)
+	mem1 = (const unsigned char *) s1;
+	mem2 = (const unsigned char *) s2;
+	if (n == 0)
+		return (0);
+	i = 0;
+	while (i < n)
 	{
-		if (*p == (unsigned char)c)
-			return ((void *)p);
-		p++;
+		if (mem1[i] != mem2[i])
+			return (mem1[i] - mem2[i]);
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
 /*
 #include <stdio.h>
+#include <string.h>
 int	main(void)
 {
-	const char *str = "Hello, World!";
-	int a = 'W';
-	int b = '1';
-	char *result;
-
-	result = (char *)ft_memchr(str, a, 10);
-	if (result)
-		printf("%s\n", result);
-	else
-		printf("Not found\n");
-	
-	result = (char *)ft_memchr(str, b, 10);
-	if (result)
-		printf("%s\n", result);
-	else
-		printf("Not found\n");
+	const char *str1 = "119";
+	const char *str2 = "111111";
+	printf("%d\n", memcmp(str1, str2, 3));
 }
 */
