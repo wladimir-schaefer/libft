@@ -31,6 +31,5 @@ int	main()
 	printf("%s\n", str);
 	for (int i = 0; i < 3; i++)
 		printf("str[%d] = %d\n", i, str[i]);
-
 }
 */
