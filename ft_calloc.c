@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: wschafer <wschafer@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 11:34:16 by wschafer          #+#    #+#             */
-/*   Updated: 2025/05/14 11:34:19 by wschafer         ###   ########.fr       */
+/*   Updated: 2025/05/17 20:23:36 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ void	ft_bzero(void *s, size_t n);
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*arr;
+	void	*ptr;
 
 	if (nmemb == 0 || size == 0)
-		return (NULL);
+		return (malloc(0));
 	if (nmemb > SIZE_MAX / size)
 		return (NULL);
-	arr = malloc (nmemb * size);
-	if (!arr)
+	ptr = malloc(nmemb * size);
+	if (!ptr)
 		return (NULL);
-	ft_bzero(arr, nmemb * size);
-	return (arr);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
 /*
 #include <stdio.h>
@@ -36,7 +36,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 int	main(void)
 {
 	int *arr1;
-	size_t count1 = 15;
+	size_t count1 = 5;
 
 	arr1 = (int *)ft_calloc(count1, sizeof(int));
 	if (!arr1)
@@ -44,9 +44,10 @@ int	main(void)
 	for (size_t i = 0; i < count1; i++)
 		printf("str[%zu] = %d\n", i, arr1[i]);	
 	free(arr1);
+	printf("\n");
 
 	char *arr2;
-	size_t count2 = 15;
+	size_t count2 = 5;
 
 	arr2 = (char *)ft_calloc(count2, sizeof(char));
 	if (!arr2)
@@ -54,9 +55,10 @@ int	main(void)
 	for (size_t i = 0; i < count2; i++)
 		printf("str[%zu] = %d\n", i, arr2[i]);
 	free(arr2);
+	printf("\n");
 
 	int *arr3;
-	size_t count3 = 15;
+	size_t count3 = 0;
 
 	arr3 = (int *)ft_calloc(count3, SIZE_MAX);
 	if (!arr3)

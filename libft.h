@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: wschafer <wschafer@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:34:30 by wschafer          #+#    #+#             */
-/*   Updated: 2025/05/07 15:57:01 by wschafer         ###   ########.fr       */
+/*   Updated: 2025/05/17 11:40:29 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif /* LIBFT_H */
