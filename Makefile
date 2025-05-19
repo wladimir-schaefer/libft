@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Project name (the output binary)
-NAME = my_program
+NAME = libft.a
 
 # Source and object files
 SRC = main.c utils.c

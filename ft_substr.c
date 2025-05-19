@@ -1,11 +1,12 @@
 #include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*sub;
+	char	*sub;
 	size_t	i;
 	size_t	s_len;
 

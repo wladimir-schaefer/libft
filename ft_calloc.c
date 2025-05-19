@@ -6,10 +6,11 @@
 /*   By: wschafer <wschafer@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 11:34:16 by wschafer          #+#    #+#             */
-/*   Updated: 2025/05/17 20:23:36 by wschafer         ###   ########.fr       */
+/*   Updated: 2025/05/17 21:40:10 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 #include <limits.h>
 #include <stdint.h>
