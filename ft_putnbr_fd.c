@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 11:22:59 by wschafer          #+#    #+#             */
-/*   Updated: 2025/05/22 11:23:04 by wschafer         ###   ########.fr       */
+/*   Created: 2025/05/22 12:08:55 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/22 12:08:58 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> 
+#include "libft.h"
+#include <stddef.h>
 
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_itoa(int n);
+void	ft_putstr_fd(char *s, int fd);
+
+void	ft_putnbr_fd(int n, int fd)
 {
+	char	*s;
+
+	s = ft_itoa(n);
 	if (!s)
 		return ;
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	ft_putstr_fd(s, fd);
+	free(s);
 }
 /*
 int main(void)
 {
-	char *str = "abcdef";
-	ft_putstr_fd(str, 1);
+	int a = 1234;
+	ft_putnbr_fd(a, 1);
 	return(0);
 }
 */
