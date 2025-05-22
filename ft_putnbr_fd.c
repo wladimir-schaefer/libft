@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
+#include <stdlib.h>
 
 char	*ft_itoa(int n);
 void	ft_putstr_fd(char *s, int fd);
