@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
-	trimmed = malloc((end - start) * sizeof(char));
+	trimmed = malloc((end - start + 1) * sizeof(char));
 	if (!trimmed)
 		return (NULL);
 	ft_strlcpy(trimmed, &s1[start], end - start + 1);

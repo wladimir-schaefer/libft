@@ -13,7 +13,8 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static	size_t	get_lenth(int n);
+static	size_t	get_lenth(long n);
+static	char		*convert(char *str, long n, size_t i, size_t sign);
 
 char	*ft_itoa(int n)
 {
@@ -21,30 +22,24 @@ char	*ft_itoa(int n)
 	size_t	sign;
 	size_t	len;
 	size_t	i;
+	long	num;
 
 	sign = 0;
+	num = n;
 	if (n < 0)
 	{
 		sign = 1;
-		n = -n;
+		num = -num;
 	}
-	len = get_lenth(n);
+	len = get_lenth(num);
 	str = malloc((len + sign + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = len + sign;
-	str[i] = '\0';
-	while (i > 0)
-	{
-		str[i-- - 1] = n % 10 + '0';
-		n = n / 10;
-	}
-	if (sign)
-		str[0] = '-';
-	return (str);
+	return (convert(str, num, i, sign));
 }
 
-static	size_t	get_lenth(int n)
+static	size_t	get_lenth(long n)
 {
 	size_t	len;
 
@@ -58,6 +53,19 @@ static	size_t	get_lenth(int n)
 	}
 	return (len);
 }
+
+static	char	*convert(char *str, long n, size_t i, size_t sign)
+{
+	str[i] = '\0';
+	while (i-- > sign)
+	{
+		str[i] = n % 10 + '0';
+		n = n / 10;
+	}
+	if (sign)
+		str[0] = '-';
+	return (str);
+}
 /*
 #include <stdio.h>
 #include <stdlib.h>
@@ -65,18 +73,22 @@ static	size_t	get_lenth(int n)
 int	main(void)
 {
 	int a = -1234;
-//	int b = -2147483648;
+	int b = -2147483648;
 	char *str;
+	char *tmp;
 
 	str = ft_itoa(a);
-//	printf("%s\n", str);
+	tmp = str;
+	printf("%s\n", str);
 	while (*str)
 	{
 		printf("%c\n", *str);
 		str++;
 	}
-	printf("%c\n", str[5]);
-//	str = ft_itoa(b);
-//	printf("%s\n", str);0
+	free(tmp);
+
+	str = ft_itoa(b);
+	printf("%s\n", str);
+	free(str);
 }
 */
