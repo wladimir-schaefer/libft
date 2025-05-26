@@ -1,4 +1,5 @@
 {
 	"42header.username": "wschafer",
-	"42header.email": "wschafer@student.42berlin.de"
+	"42header.email": "wschafer@student.42berlin.de",
+	"makefile.configureOnOpen": true
 }
