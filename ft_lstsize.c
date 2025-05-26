@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 11:21:34 by wschafer          #+#    #+#             */
-/*   Updated: 2025/05/26 11:21:38 by wschafer         ###   ########.fr       */
+/*   Created: 2025/05/26 12:09:58 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/26 12:10:02 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	if (lst && new)
+	int count;
+
+	count = 0;
+	if (lst)
 	{
-		new -> next = *lst;
-		*lst = new;
+		while (lst)
+		{
+			count++;
+			lst = lst -> next;
+		}
 	}
+	return (count);
 }
-/*
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-*/
